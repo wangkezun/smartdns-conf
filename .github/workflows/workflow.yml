@@ -36,7 +36,7 @@ jobs:
       - name: generate smartdns
         run: cd dnsmasq-china-list && make SERVER=domestic SMARTDNS_SPEEDTEST_MODE=tcp:80 smartdns-domain-rules
       - name: copy to repo
-        run: copy dnsmasq-china-list/accelerated-domains.china.domain.smartdns.conf dnsmasq-china-list/apple.china.domain.smartdns.conf .
+        run: cp dnsmasq-china-list/accelerated-domains.china.domain.smartdns.conf dnsmasq-china-list/apple.china.domain.smartdns.conf .
       - name: delete repo
         run: rm -r dnsmasq-china-list
       - name: Git Commit and Push
