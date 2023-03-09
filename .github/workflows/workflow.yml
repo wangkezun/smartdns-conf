@@ -35,4 +35,21 @@ jobs:
           path: dnsmasq-china-list
       - name: generate smartdns
         run: cd dnsmasq-china-list && make SERVER=domestic SMARTDNS_SPEEDTEST_MODE=tcp:80 smartdns-domain-rules
-        
+      - name: copy to repo
+        run: copy dnsmasq-china-list/accelerated-domains.china.domain.smartdns.conf dnsmasq-china-list/apple.china.domain.smartdns.conf .
+      - name: delete repo
+        run: rm -r dnsmasq-china-list
+      - name: Git Commit and Push
+        # You may pin to the exact commit or the version.
+        # uses: github-actions-x/commit@722d56b8968bf00ced78407bbe2ead81062d8baa
+        uses: github-actions-x/commit@v2.9
+        with:
+          # Github Token with commit access
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # Override branch to push to
+          push-branch: master
+          # Specify commit message
+          commit-message: auto update
+          email: admin@wkz.io
+          # Committer name. Default is name of the person or app that initiated the workflow.
+          name: wangkezun
