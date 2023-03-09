@@ -1,0 +1,1 @@
+# smartdns-accelerated-domains
