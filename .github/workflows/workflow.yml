@@ -33,8 +33,6 @@ jobs:
           # Repository owner and name. Ex: sudosubin/git-clone-action
           repository: felixonmars/dnsmasq-china-list
           path: dnsmasq-china-list
-      - name: cd
-        run: cd dnsmasq-china-list
       - name: generate smartdns
-        run: make SERVER=domestic SMARTDNS_SPEEDTEST_MODE=tcp:80 smartdns-domain-rules
+        run: cd dnsmasq-china-list && make SERVER=domestic SMARTDNS_SPEEDTEST_MODE=tcp:80 smartdns-domain-rules
         
