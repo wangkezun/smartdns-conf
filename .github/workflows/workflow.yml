@@ -31,9 +31,7 @@ jobs:
         uses: sudosubin/git-clone-action@v1.0.1
         with:
           # Repository owner and name. Ex: sudosubin/git-clone-action
-          repository: https://github.com/felixonmars/dnsmasq-china-list
-          # Git host platform. Ex: github, gitlab, bitbucket, gitee, or else (git.suckless.org, ...)
-          # Relative path from current directory, where to clone.
+          repository: felixonmars/dnsmasq-china-list
           path: dnsmasq-china-list
       - name: cd
         run: cd dnsmasq-china-list
